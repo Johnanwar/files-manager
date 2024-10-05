@@ -13,6 +13,8 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import { useState } from 'react';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import FolderIcon from '@mui/icons-material/Folder';
+import { Provider } from 'react-redux';
+import store from './redux';
 
 const actions = [
   { icon: <FolderIcon />, name: 'Create a new folder' },
@@ -42,6 +44,8 @@ const Main = styled('main')(({ theme }) => ({
    return (
      <html lang="en">
       <body className={roboto.variable}>
+
+        <Provider store={store}>
           <AppRouterCacheProvider>
            <ThemeProvider theme={theme}>
             <Main>
@@ -67,6 +71,7 @@ const Main = styled('main')(({ theme }) => ({
             </Main>
            </ThemeProvider>
           </AppRouterCacheProvider>
+          </Provider>
        </body>
      </html>
    );

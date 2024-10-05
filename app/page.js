@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid2';
 
 import { styled } from '@mui/material/styles';
 import Item  from './components/Item/Item';
+import { useSelector } from 'react-redux';
 
 
 
@@ -18,6 +19,9 @@ const Container = styled(Box)(({ theme }) => ({
 
 
 export default function Home() {
+  const filesData = useSelector(state => state.folders);
+  console.log(filesData, "filesData")
+
   return (
     <Container sx={{ flexGrow: 1 }}>
     <Grid container spacing={2}>
